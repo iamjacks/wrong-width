@@ -45,6 +45,7 @@ export default class extends React.Component {
             }
           `}</style>
         </Head>
+        <h3>This page uses styled-jsx</h3>
         <div className='inner'>
           <h1>My width is {width}px</h1>
         </div>
