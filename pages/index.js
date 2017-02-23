@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default class extends React.Component {
   constructor (props) {
@@ -29,21 +30,36 @@ export default class extends React.Component {
     const {width} = this.state
     return (
       <div className='container'>
+        <Head>
+          <style>{`
+            .global-container {
+              width: 100%;
+              background-color: LightGreen;
+              padding: 50px;
+              margin: 0 auto;
+              text-align: center;
+              box-sizing: border-box;
+            }
+            .global-inner {
+              background-color: rgba(0,0,0,.1);
+            }
+          `}</style>
+        </Head>
         <div className='inner'>
           <h1>My width is {width}px</h1>
         </div>
-        <p><Link href='/other'><a>Go to other page</a></Link></p>
+        <p><Link href='/other'><a>Goto: page with global style</a></Link></p>
         <style jsx>{`
           .container {
             width: 100%;
-            background-color: #f0f0f0;
+            background-color: pink;
             padding: 50px;
             margin: 0 auto;
             text-align: center;
             box-sizing: border-box;
           }
           .inner {
-            background-color: #e0e0e0;
+            background-color: rgba(0,0,0,.1);
           }
         `}</style>
       </div>
